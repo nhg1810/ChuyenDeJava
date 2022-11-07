@@ -1,5 +1,6 @@
 package com.chuyendejava.demo.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,17 +18,17 @@ public class Student {
 
     @Id
     @Column(name = "SoCMND")
-    private int idStudent;
+    private long idStudent;
     @Column(name = "HoTen")
     private String name;
     @Column(name = "Email")
     private String email;
     @Column(name = "SoDT")
-    private int phone;
+    private String phone;
     @Column(name = "DiaChi")
     private String address;
 
-    public Student(int idStudent, String name, String email, int phone, String address) {
+    public Student(long idStudent, String name, String email, String phone, String address) {
         this.idStudent = idStudent;
         this.name = name;
         this.email = email;
@@ -37,4 +38,8 @@ public class Student {
 
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
     private List<Graduation> graduation;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.EAGER )
+    private List<Job> jobs;
 }

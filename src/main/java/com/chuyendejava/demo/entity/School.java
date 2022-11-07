@@ -1,9 +1,6 @@
 package com.chuyendejava.demo.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
@@ -12,7 +9,7 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name = "TRUONG")
-@EqualsAndHashCode(of = {"MaTruong"})
+@NoArgsConstructor
 public class School {
     @Id
     @Column(name = "MaTruong")
@@ -26,6 +23,15 @@ public class School {
 
     @Column(name = "SoDT")
     private int phoneSchool;
+
+    public School(String idSchool, String nameSchool, String addrSchool, int phoneSchool) {
+        this.idSchool = idSchool;
+        this.nameSchool = nameSchool;
+        this.addrSchool = addrSchool;
+        this.phoneSchool = phoneSchool;
+    }
+
     @OneToMany(mappedBy = "school", cascade = CascadeType.ALL)
     private List<Graduation> graduation;
+
 }

@@ -6,7 +6,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -24,15 +26,20 @@ public class Graduation {
     private Date dateGreduation;
     @Column(name = "LoaiTN")
     private String greduationType;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "MaTruong")
     private School school;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "SoCMND")
     private Student student;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "MaNganh")
     private Major major;
+
+    @PrePersist
+    private void prePersist() {
+        this.idGraduation = UUID.randomUUID().toString();
+    }
 }
