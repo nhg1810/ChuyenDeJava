@@ -1,9 +1,7 @@
-package com.chuyendejava.demo.dto.mapper;
+package com.chuyendejava.demo.entity.dto.mapper;
 
-import com.chuyendejava.demo.dto.GraduationDTO;
+import com.chuyendejava.demo.entity.dto.GraduationDTO;
 import com.chuyendejava.demo.entity.Graduation;
-import com.chuyendejava.demo.entity.Major;
-import com.chuyendejava.demo.entity.School;
 import com.chuyendejava.demo.entity.Student;
 import com.chuyendejava.demo.reponsitories.SchoolRepository;
 import lombok.AccessLevel;

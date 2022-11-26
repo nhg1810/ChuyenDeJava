@@ -1,4 +1,4 @@
-package com.chuyendejava.demo.dto;
+package com.chuyendejava.demo.entity.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;

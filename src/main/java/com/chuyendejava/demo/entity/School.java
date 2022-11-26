@@ -12,16 +12,16 @@ import java.util.List;
 @NoArgsConstructor
 public class School {
     @Id
-    @Column(name = "MaTruong")
-    private String idSchool;
+        @Column(name = "MaTruong")
+        private String idSchool;
 
-    @Column(name = "TenTruong")
-    private String nameSchool;
+        @Column(name = "TenTruong")
+        private String nameSchool;
 
-    @Column(name = "DiaChi")
-    private String addrSchool;
+        @Column(name = "DiaChi")
+        private String addrSchool;
 
-    @Column(name = "SoDT")
+        @Column(name = "SoDT")
     private int phoneSchool;
 
     public School(String idSchool, String nameSchool, String addrSchool, int phoneSchool) {

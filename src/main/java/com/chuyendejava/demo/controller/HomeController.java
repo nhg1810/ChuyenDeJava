@@ -1,16 +1,13 @@
 package com.chuyendejava.demo.controller;
 
-import com.chuyendejava.demo.dto.GraduationDTO;
+import com.chuyendejava.demo.entity.dto.GraduationDTO;
 import com.chuyendejava.demo.entity.*;
 import com.chuyendejava.demo.reponsitories.*;
-import com.chuyendejava.demo.dto.mapper.graduationMapper;
+import com.chuyendejava.demo.entity.dto.mapper.graduationMapper;
 import lombok.AllArgsConstructor;
-import lombok.Value;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,8 +16,6 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
-import java.util.Date;
-import java.util.List;
 
 @Controller
 @AllArgsConstructor
